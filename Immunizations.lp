@@ -11,7 +11,7 @@ pneumonia(Date).
 tetanus(Date).
 
 %List of Dates
-flu_shot(Dates).
+flu_shot(Date).
 
 % Check the status 
 is_bcg(X) :- bcg(Date).
@@ -42,7 +42,7 @@ is_tetanus(X) :- tetanus(Date).
 is_tetanus(X) :- not no_tetanus(X).
 no_tetanus(X) :- not is_tetanus(X).
 
-is_flu_shot(X) :- flu_shot(Dates).
+is_flu_shot(X) :- flu_shot(Date).
 is_flu_shot(X) :- not no_flu_shot(X).
 no_flu_shot(X) :- not flu_shot(X).
 
