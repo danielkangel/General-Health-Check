@@ -63,3 +63,8 @@ low_risk(X):- sum_risk(Risk), Risk >= 3, Risk =< 5.
 medium_risk(X):- sum_risk(Risk), Risk >= 6, Risk =< 12.
 %Seek Medical Attention
 high_risk(X):- sum_risk(Risk), Risk >= 12, Risk =< 24.
+
+risk_level(high):-high_risk(X).
+risk_level(medium):-medium_risk(X).
+risk_level(low):-low_risk(X).
+risk_level(stress):-may_be_stress(X).
