@@ -15,7 +15,7 @@ allergies(Confirmed, Potential).
 %marijuana.
 caffeine()
 %alchol_consumption(YorN, Frequency).
-%excercise(Minutes_Per_Week).
+excercise(Minutes_Per_Week).
 %Sexually Active
 
 
