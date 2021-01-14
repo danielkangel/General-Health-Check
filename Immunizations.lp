@@ -44,3 +44,7 @@ is_vaccinated(X) :- is_bcg(X), is_hepatitis_b(X), is_measles(X), is_meningitis(X
 is_bcg :- bcg(Date).
 not is_bcg:- 
 not_vaccinated(X) :- not is_vaccinated(X).
+
+%Current Flu
+
+get_recent(Recent):-flu_shot([Recent|T]).
