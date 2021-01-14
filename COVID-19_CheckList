@@ -1,14 +1,14 @@
 %COVID-19 CheckList
 %Most Recent Version
-temp(35.0).
+temp(40.0).
 
 %One Point
-cough.
-cold.
-diarrhea.
-sore_throat.
-body_ache.
-headache.
+%cough.
+%cold.
+%diarrhea.
+%sore_throat.
+%body_ache.
+%headache.
 fever(X):-temp(Temp), Temp >= 37.8.
 
 is_cough(X):-cough.
@@ -20,23 +20,23 @@ is_headache(X):-headache.
 is_fever(X):-fever(X).
 
 %Two Point
-difficulty_breathing.
-feeling_tired.
+%difficulty_breathing.
+%feeling_tired.
 
 is_difficulty_breathing(X):-difficulty_breathing.
 is_feeling_tired(X):-feeling_tired.
 
 %Three point
 %traveled_14.
-travel_to_COVID_Area.
-direct_contact_COVID.
+%travel_to_COVID_Area.
+%direct_contact_COVID.
 
 is_traveled_14(X):- traveled_14.
 is_travel_to_COVID_Area(X):- travel_to_COVID_Area.
 is_direct_contact_COVID(X):- direct_contact_COVID.
 
 
-sum_risk(X):-sum_risk_three(Three).
+sum_risk(X):-sum_risk_three(Three),sum_risk_two(Two),sum_risk_one(One), X is One + Two + Three.
 
 sum_risk_one(X):- sum_risk_one(X,[is_cough(A), is_cold(B), is_diarrhea(C), is_sore_throat(D), is_body_ache(E), is_headache(F), is_fever(G)]).
 
