@@ -1,0 +1,22 @@
+%COVID-19 CheckList
+
+%One Point
+cough.
+cold.
+diarrhea.
+sore_throat.
+body_ache.
+headache.
+fever(X):-temp(Temp), Temp >= 37.8
+
+%Two Point
+difficulty_breathing.
+feeling_tired.
+
+%Three point
+traveled_14.
+travel_to_COVID_Area.
+direct_contact_COVID.
+
+
+sum_risk(X):-
