@@ -1,13 +1,13 @@
 % Immunizations
 
 % Common vaccines
-bcg.
-meningitis.
-hepatitis_b.
-polio.
-measles.
-rubella.
+bcg(X).
+meningitis(X).
+hepatitis_b(X).
+polio(X).
+measles(X).
+rubella(X).
 
 % Checking if someone is completely vaccinated
-is_vaccinated(X) :- bcg, meningitis, hepatitis_b, polio, measles, rubella.
+is_bcg(X) :- bcg(X).
 not_vaccinated(X) :- not is_vaccinated(X).
