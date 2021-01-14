@@ -20,3 +20,6 @@ underweight(X):-bmi(B), B < 18.5.
 normal_weight(X):-bmi(B), B >= 18.5, B < 25.
 overweight(X):-bmi(B), B >= 25, B < 30.
 obese(X):-bmi(B), B >= 30.
+
+%bmi kg/m^2   70 percent risk for those with 35kg/m^2
+highRisk :- bmi(X), X > 70.
