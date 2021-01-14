@@ -21,6 +21,7 @@ is_normal_pulse(X) :-  pulserate(Pulse), Pulse >= 60, Pulse =< 100.
 is_elevated_blood(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 120, Pressure =< 129.
 is_high_blood_stg1(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 130, Pressure =< 139.
 is_high_blood_stg2(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 140, Pressure =< 180.
+% Call doctor immmediately. Emergency room
 is_high_blood_crisis(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 180.
 
 % categories for abnormal body temperatures
@@ -32,5 +33,5 @@ has_bradypnea(X) :- not is_normal_breath(Breath), Breath < 12.
 % categories for abnormal pulse rate
 
 is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D).
-
+is_not_healthy :- not is_healthy.
 
