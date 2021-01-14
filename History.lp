@@ -10,11 +10,12 @@ allergies(Confirmed, Potential).
 
 %Lifestyle Habits
 %tobacco(YorN, Packs_Day, Years).
+
 %True or False
 %marijuana.
 caffeine()
 %alchol_consumption(YorN, Frequency).
-%exercise(Minutes_Per_Week).
+%excercise(Minutes_Per_Week).
 %Sexually Active
 
 
@@ -24,9 +25,9 @@ asthma(X).
 %List of Duples of Parent and Type of Cancer
 cancer_history(List).
 %Diabetes of Duples of Family and Type of Diabtes
-diabetes_history(List)
+diabete_history(List)
 %Heart Diease
-heart_disease_history(List)
+heart_diease_history(List)
 %Stroke
 stroke_history(List)
 %Migraines
