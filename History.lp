@@ -14,7 +14,7 @@ allergies(Confirmed, Potential).
 %marijuana.
 caffeine()
 %alchol_consumption(YorN, Frequency).
-%excercise(Minutes_Per_Week).
+%exercise(Minutes_Per_Week).
 %Sexually Active
 
 
@@ -24,9 +24,9 @@ asthma(X).
 %List of Duples of Parent and Type of Cancer
 cancer_history(List).
 %Diabetes of Duples of Family and Type of Diabtes
-diabete_history(List)
+diabetes_history(List)
 %Heart Diease
-heart_diease_history(List)
+heart_disease_history(List)
 %Stroke
 stroke_history(List)
 %Migraines
