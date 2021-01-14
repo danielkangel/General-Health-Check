@@ -1,19 +1,21 @@
 %%Patient History
 
 %%List of Operation and Operation Dates
-%Example [[Wisdom, 02/19],[Tonsil, 8/20]]
+%Example [[wisdom, 02/19],[tonsil, 8/20]]
 surgical_history(X).
 
 %%List of Allegres
-%Example {[Peanuts,...],[Sulpha]}
+%Example {[peanuts,...],[sulpha]}
 allergies(Confirmed, Potential).
 
 %Lifestyle Habits
-%tobacco(YorN, Packs_Day,Years).
+%tobacco(YorN, Packs_Day, Years).
 %True or False
 %marijuana.
+caffeine()
 %alchol_consumption(YorN, Frequency).
 %excercise(Minutes_Per_Week).
+%Sexually Active
 
 
 %FamilyHistory
