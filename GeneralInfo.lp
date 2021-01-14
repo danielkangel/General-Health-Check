@@ -20,9 +20,3 @@ underweight(X):-bmi(B), B < 18.5.
 normal_weight(X):-bmi(B), B >= 18.5, B < 25.
 overweight(X):-bmi(B), B >= 25, B < 30.
 obese(X):-bmi(B), B >= 30.
-
-
-%type 1 diabetes happens to ppl at a younger age 
-%bmi kg/m^2   70 percent risk for those with 35kg/m^2
-highRiskType1 :- bmi(X), age(Z), Z<18, X > 30.
-highRiskType2 :- bmi(X), age(Z), Z>40, X>30.
