@@ -55,10 +55,10 @@ not_vaccine(meningitis, X):- no_meningitis(X).
 not_vaccine(measles, X):- no_measles(X).
 not_vaccine(hepatitis, X):- no_heptatitis(X).
 
+missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
 
-
-%findall(V, not_vaccine(V, X), Vaccines) :- 
-%missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
+%member(X, [X|T]).
+%member(Y , [X|T]) :- member(Y, T).
 
 %if not vaccinated then make a list of what vaccinations needed
 %%appendVacc([], Y, Y).
