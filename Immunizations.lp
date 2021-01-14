@@ -47,12 +47,17 @@ is_vaccinated(X) :- is_bcg(X), is_hepatitis_b(X), is_measles(X), is_meningitis(X
 not_vaccinated(X) :- not is_vaccinated(X).
 is_vaccinated(X) :- not not_vaccinated(X).
 
-not_vaccine(bcg, X) :- not is_bcg(X).
-not_vaccine(flu, X) :- not is_flu(X).
-not_vaccine() 
+not_vaccine(bcg, X) :- no_bcg(X).
+not_vaccine(flu, X) :- no_flu_shot(X).
+not_vaccine(rubella, X):- no_rubella(X).
+not_vaccine(polio, X):- no_polio(X).
+not_vaccine(meningitis, X):- no_meningitis(X). 
+not_vaccine(measles, X):- no_measles(X).
+not_vaccine(hepatitis, X):- no_heptatitis(X).
 
+findall(V, not(V, X), Vaccines) :- 
 missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
 
 %if not vaccinated then make a list of what vaccinations needed
 appendVacc([], Y, Y).
-appendVacc([H|T], Y, [H|Z]   ) :- append(T,Y,Z).
+appendVacc([H|T], Y, [H|Z]   ) :- appendVacc(T,Y,Z).
