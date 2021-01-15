@@ -11,6 +11,15 @@ temp(40.0).
 %headache.
 fever(X):-temp(Temp), Temp >= 37.8.
 
+%Two Point
+%difficulty_breathing.
+%feeling_tired.
+
+%Three point
+%traveled_14.
+%travel_to_COVID_Area.
+%direct_contact_COVID.
+
 is_cough(X):- cough.
 -is_cough(X):- not cough.
 is_cold(X):- cold.
@@ -26,19 +35,14 @@ is_headache(X):- headache.
 is_fever(X):- fever(X).
 -is_fever(X):- not fever(X).
 
-%Two Point
-%difficulty_breathing.
-%feeling_tired.
+
 
 is_difficulty_breathing(X):- difficulty_breathing.
 -is_difficulty_breathing(X):- not difficulty_breathing.
 is_feeling_tired(X):- feeling_tired.
 -is_feeling_tired(X):- not feeling_tired.
 
-%Three point
-%traveled_14.
-%travel_to_COVID_Area.
-%direct_contact_COVID.
+
 
 is_traveled_14(X):- traveled_14.
 -is_traveled_14(X):- not traveled_14.
