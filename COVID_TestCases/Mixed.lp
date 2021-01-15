@@ -56,13 +56,13 @@ patient2:-cough, cold, not sore_throat, feeling_tired, not diarrhea,
 %'time scasp -n0 ForwardPass.lp' will return speed of program and answer
 %%%%%%%%%%%%%%%
 
-?-patient2, sum_risk(X).
+%?-patient2, sum_risk(X).
 %Answer = Multiple Models
 %Number of Models = 3
 
 %%%%%%%%%%%%%%%
 
-?-patient2, risk_level(high).
+%?-patient2, risk_level(high).
 %Answer = Multiple Models
 %Number of Models = 3
 
