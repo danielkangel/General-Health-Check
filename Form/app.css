@@ -1,6 +1,28 @@
+<<<<<<< Updated upstream
 
 
 
 
 
 
+=======
+html {
+  font-size: 18px;
+}
+
+h1.display-1 {
+  font-size: 3rem;
+}
+h2.display-4 {
+  font-size: 1.8rem;
+}
+
+h3.question {
+  font-size: 1rem;
+  text-decoration: bold;
+}
+
+section {
+  background-color: rgb(245, 245, 245);
+}
+>>>>>>> Stashed changes
