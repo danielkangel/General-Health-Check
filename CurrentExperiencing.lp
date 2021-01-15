@@ -1,4 +1,5 @@
 %Current Experiece based of Input
+%Can be used to make diagnosises
 
 feeling_tired(Days).
 fever(Temp).

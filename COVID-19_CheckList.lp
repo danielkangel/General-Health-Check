@@ -3,7 +3,7 @@
 
 
 %abducible cough
-
+%Synatic Sugar for Abducible
 %cough:- not neg_cough
 %neg_cough:- not cough.
 
@@ -14,6 +14,7 @@
 #abducible sore_throat.
 #abducible body_ache.
 #abducible headache.
+%Not needed Below
 %#abducible temp()
 fever:-temp(Temp), Temp .>=. 37.8.
 
@@ -27,15 +28,15 @@ fever:-temp(Temp), Temp .>=. 37.8.
 #abducible travel_to_COVID_Area.
 #abducible direct_contact_COVID.
 
+%This section is used for Backwards reasoning by setting up Multiple worlds
+
+%Level 1
 is_cough(X):- cough.
 -is_cough(X):- not cough.
-
 is_cold(X):- cold.
 -is_cold(X):- not cold.
-
 is_diarrhea(X):- diarrhea.
 -is_diarrhea(X):- not diarrhea.
-
 is_sore_throat(X):- sore_throat.
 -is_sore_throat(X):- not sore_throat.
 is_body_ache(X):- body_ache.
@@ -46,14 +47,14 @@ is_fever(X):- fever(X).
 -is_fever(X):- not fever(X).
 
 
-
+%Level 2
 is_difficulty_breathing(X):- difficulty_breathing.
 -is_difficulty_breathing(X):- not difficulty_breathing.
 is_feeling_tired(X):- feeling_tired.
 -is_feeling_tired(X):- not feeling_tired.
 
 
-
+%Level 3
 is_traveled_14(X):- traveled_14.
 -is_traveled_14(X):- not traveled_14.
 is_travel_to_COVID_Area(X):- travel_to_COVID_Area.
