@@ -1,4 +1,4 @@
-%Psych Evaul CheckList
+%Psych Eval CheckList
 
 little_interest_or_pleasure(X).
 feeling_down(X).

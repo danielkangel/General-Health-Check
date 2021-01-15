@@ -44,16 +44,17 @@ is_vaccinated(X) :- is_bcg(A), is_hepatitis_b(B), is_measles(C), is_meningitis(D
 vaccinated(yes):-is_vaccinated(X).
 vaccinated(no):- not is_vaccinated(X).
 
-not_vaccine(bcg, X) :- -is_bcg(X).
-not_vaccine(flu, X) :- -is_flu_shot(X).
-not_vaccine(rubella, X):- -is_rubella(X).
-not_vaccine(polio, X):- -is_polio(X).
-not_vaccine(meningitis, X):- -is_meningitis(X). 
-not_vaccine(measles, X):- -is_measles(X).
-not_vaccine(hepatitis_b, X):- -is_heptatitis_b(X).
-not_vaccine(tetanus, X):- -is_tetanus(X).
+% WIP
+%not_vaccine(bcg, X) :- -is_bcg(X).
+%not_vaccine(flu, X) :- -is_flu_shot(X).
+%not_vaccine(rubella, X):- -is_rubella(X).
+%not_vaccine(polio, X):- -is_polio(X).
+%not_vaccine(meningitis, X):- -is_meningitis(X). 
+%not_vaccine(measles, X):- -is_measles(X).
+%not_vaccine(hepatitis_b, X):- -is_heptatitis_b(X).
+%not_vaccine(tetanus, X):- -is_tetanus(X).
 
-missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
+%missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
 
 
 %member(X, [X|T]).
