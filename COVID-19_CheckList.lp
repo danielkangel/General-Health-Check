@@ -51,7 +51,7 @@ is_direct_contact_COVID(X):- direct_contact_COVID.
 sum_risk(X):-sum_risk_three(Three),sum_risk_two(Two),sum_risk_one(One), X is One + Two + Three.
 
 sum_risk_one(X):- sum_risk_one(X,[is_cough(A), is_cold(B), is_diarrhea(C), is_sore_throat(D), is_body_ache(E), is_headache(F), is_fever(G)]).
-
+%-sum_risk_one(X):- not sum_risk_one(X,[is_cough(A), is_cold(B), is_diarrhea(C), is_sore_throat(D), is_body_ache(E), is_headache(F), is_fever(G)]).
 sum_risk_one(X,[]):- X is 0.
 sum_risk_one(X,[H|T]):- sum_risk_one(X1,T), call(H) , X is X1 + 1.
 sum_risk_one(X,[H|T]):- sum_risk_one(X,T).
