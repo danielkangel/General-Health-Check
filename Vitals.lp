@@ -17,7 +17,7 @@ cholesterol_high(X) :- cholesterol(Z), Z>240.
 is_normal_temp(Temp) :- bodytemp(Temp), Temp >= 36.1, Temp =< 37.2.
 is_normal_blood(X) :- systolic(Sys), diastolic(Dia), Sys =< 120, Dia =<80.
 is_normal_breath(X) :- breathingrate(Breath), Breath >= 12, Breath =< 16.
-is_normal_pulse(X) :-  pulserate(Pulse), Pulse >= 60, Pulse =< 100.
+is_normal_pulse(Pulse) :-  pulserate(Pulse), Pulse >= 60, Pulse =< 100.
 
 not_normal_blood(X) :- not is_normal_blood(Pressure).
 
