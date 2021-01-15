@@ -16,7 +16,7 @@ cholesterol(200).
 
 %checks cholesterol
 cholesterol_normal(X) :- cholesterol(Z), Z<200.
-cholesterol_border(X) :- cholesterol(Z), Z>200 ; Z<240.
+cholesterol_border(X) :- cholesterol(Z), Z>=200, Z=<240.
 cholesterol_high(X) :- cholesterol(Z), Z>240.
 
 
@@ -64,10 +64,10 @@ has_fever(X) :- not is_normal_temp(Temp), Temp > 37.2.
 has_tachypnea(X) :- not is_normal_breath(Breath), Breath > 16.
 has_bradypnea(X) :- not is_normal_breath(Breath), Breath < 12.
 % categories for abnormal pulse rate
-% potential damage from heart attack, heart disease, congenital heart disease, high blood pressure, smoking
+% Causes: potential damage from heart attack, heart disease, congenital heart disease, high blood pressure, smoking
 has_tachycardia(X) :- not is_normal_pulse(Pulse), Pulse > 100. 
 has_bradycardia(X) :- not is_normal_pulse(Pulse), Pulse < 60.
 
 is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D), cholesterol_normal(Z).
-% is_not_healthy :- not is_healthy.
+-is_healthy :- not is_healthy.
 
