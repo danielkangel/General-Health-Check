@@ -25,3 +25,4 @@ general_weight(underweight):- underweight(X).
 general_weight(healhty_weight):- normal_weight(X).
 general_weight(overweight):- overweight(X).
 general_weight(obese):- obese(X).
+

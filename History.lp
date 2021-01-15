@@ -4,11 +4,15 @@
 %Example [[wisdom, 02/19],[tonsil, 8/20]]
 %surgical_history(X).
 
+
+
 %Heart Problems in past five years
 heartTrouble.
 stroke.
 -heartMurmur.
+
 cardioVascular_disease:- heartTrouble, stroke, not heartMurmur.
+
 healthy_heart:- not cardio_vascular_disease.
 
 %Lifestyle Habits
@@ -21,6 +25,8 @@ lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
 %True or False
 %marijuana.
 %caffeine()
+
+
 %alchol_consumption(YorN, Frequency).
 excercise(Minutes_Per_Week).
 
@@ -49,3 +55,6 @@ excercise(130).
 highRiskType2 :- 
     age(Age), obese(X), not is_normal_blood(Pressure), excercise(Minutes_Per_Week),
     Minutes_Per_Week < 150,Age>45.
+
+
+problems(A, probs ) :-
