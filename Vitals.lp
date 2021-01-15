@@ -42,6 +42,13 @@ is_high_blood_stg2(X):- is_systolic_high2(Sys), not is_high_blood_crisis(Sys).
 is_high_blood_crisis(X) :- is_diastolic_crisis(Dya).
 is_high_blood_crisis(X) :- is_systolic_crisis(Sys).
 
+%Establish blood pressure levels
+blood_pressure(crisis) :- is_high_blood_crisis(X).
+blood_pressure(stage2) :- is_high_blood_stg2(X).
+blood_pressure(stage1) :- is_high_blood_stg1(X).
+blood_pressure(elevated) :- is_elevated_blood(X).
+blood_pressure(normal) :- is_normal_blood(X).
+
 % categories for abnormal body temperatures
 has_fever(X) :- not is_normal_temp(Temp), Temp > 37.2.
 
