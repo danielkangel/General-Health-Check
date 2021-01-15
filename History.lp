@@ -21,6 +21,9 @@ lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
 %True or False
 %marijuana.
 %caffeine()
+#GeneralInfo.lp.
+#Vitaks.lp.
+
 %alchol_consumption(YorN, Frequency).
 excercise(Minutes_Per_Week).
 
