@@ -1,17 +1,17 @@
 % Immunizations
 
 % Common vaccines
-#abducible bcg.
-#abducible meningitis.
-#abducible hepatitis_b.
-#abducible polio.
-#abducible measles.
-#abducible rubella.
-#abducible pneumonia.
-#abducible tetanus.
+bcg.
+meningitis.
+hepatitis_b.
+polio.
+measles.
+rubella.
+pneumonia.
+tetanus.
 
 %List of Dates
-#abducible flu_shot.
+flu_shot.
 
 % Check the status 
 is_bcg(X) :- bcg.
@@ -45,16 +45,16 @@ vaccinated(yes):-is_vaccinated(X).
 vaccinated(no):- not is_vaccinated(X).
 
 % WIP
-%not_vaccine(bcg, X) :- -is_bcg(X).
-%not_vaccine(flu, X) :- -is_flu_shot(X).
-%not_vaccine(rubella, X):- -is_rubella(X).
-%not_vaccine(polio, X):- -is_polio(X).
-%not_vaccine(meningitis, X):- -is_meningitis(X). 
-%not_vaccine(measles, X):- -is_measles(X).
-%not_vaccine(hepatitis_b, X):- -is_heptatitis_b(X).
-%not_vaccine(tetanus, X):- -is_tetanus(X).
+not_vaccine(bcg, X) :- -is_bcg(X).
+not_vaccine(flu, X) :- -is_flu_shot(X).
+not_vaccine(rubella, X):- -is_rubella(X).
+not_vaccine(polio, X):- -is_polio(X).
+not_vaccine(meningitis, X):- -is_meningitis(X). 
+not_vaccine(measles, X):- -is_measles(X).
+not_vaccine(hepatitis_b, X):- -is_heptatitis_b(X).
+not_vaccine(tetanus, X):- -is_tetanus(X).
 
-%missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
+missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
 
 
 %member(X, [X|T]).
