@@ -15,51 +15,44 @@ flu_shot(Date).
 
 % Check the status 
 is_bcg(X) :- bcg(Date).
-no_bcg(X) :- not is_bcg(X).
-is_bcg(X) :- not no_bcg(X).
+-is_bcg(X) :- not is_bcg(X).
 
 is_meningitis(X) :- meningitis(Date).
-is_meningitis(X) :- not no_meningitis(X).
-no_meningitis(X) :- not is_meningitis(X).
+-is_meningitis(X) :- not is_meningitis(X).
 
 is_hepatitis_b(X) :- hepatitis_b(Date).
-is_hepatitis_b(X) :- not no_hepatitis_b(X).
-no_hepatitis_b(X) :- not is_hepatitis_b(X).
+-is_hepatitis_b(X) :- not is_hepatitis_b(X).
 
 is_polio(X) :- polio(Date).
-is_polio(X) :- not no_polio(X).
-no_polio(X) :- not is_polio(X).
+-is_polio(X) :- not is_polio(X).
 
 is_measles(X) :- measles(Date).
-is_measles(X) :- not no_measles(X).
-no_measles(X) :- not is_measles(X).
+-is_measles(X) :- not is_measles(X).
 
 is_rubella(X) :- rubella(Date).
-is_rubella(X) :- not no_rubella(X).
-no_rubella(X) :- not is_rubella(X).
+-is_rubella(X) :- not is_rubella(X).
 
 is_tetanus(X) :- tetanus(Date).
-is_tetanus(X) :- not no_tetanus(X).
-no_tetanus(X) :- not is_tetanus(X).
+-is_tetanus(X) :- not is_tetanus(X).
 
 is_flu_shot(X) :- flu_shot(Date).
-is_flu_shot(X) :- not no_flu_shot(X).
-no_flu_shot(X) :- not flu_shot(X).
+-is_flu_shot(X) :- not flu_shot(X).
 
 
 % Checking if someone is completely vaccinated
 is_vaccinated(X) :- is_bcg(X), is_hepatitis_b(X), is_measles(X), is_meningitis(X), is_polio(X), is_rubella(X), is_flu_shot(X).
-not_vaccinated(X) :- not is_vaccinated(X).
-is_vaccinated(X) :- not not_vaccinated(X).
 
-not_vaccine(bcg, X) :- no_bcg(X).
-not_vaccine(flu, X) :- no_flu_shot(X).
-not_vaccine(rubella, X):- no_rubella(X).
-not_vaccine(polio, X):- no_polio(X).
-not_vaccine(meningitis, X):- no_meningitis(X). 
-not_vaccine(measles, X):- no_measles(X).
-not_vaccine(hepatitis, X):- no_heptatitis(X).
-not_vaccine(tetatnus, X):- no_tetanus(X).
+vaccinated(yes):-is_vaccinated(X).
+vaccinated(no):- not is_vaccinated(X).
+
+not_vaccine(bcg, X) :- not bcg(X).
+not_vaccine(flu, X) :- not flu_shot(X).
+not_vaccine(rubella, X):- not rubella(X).
+not_vaccine(polio, X):- not polio(X).
+not_vaccine(meningitis, X):- not meningitis(X). 
+not_vaccine(measles, X):- not measles(X).
+not_vaccine(hepatitis, X):- not heptatitis(X).
+not_vaccine(tetatnus, X):- not no_tetanus(X).
 
 missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
 
