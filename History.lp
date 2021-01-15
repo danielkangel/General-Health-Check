@@ -11,6 +11,10 @@ allergies(Confirmed, Potential).
 %Lifestyle Habits
 %tobacco(YorN, Packs_Day, Years).
 
+lung_cancer(medium_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day =< 1, Years <= 1.
+lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day >= 1.
+lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
+
 %True or False
 %marijuana.
 caffeine()
