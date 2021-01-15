@@ -6,9 +6,14 @@
 % Resting pulse rate normal range: 60-100 beats/min
 
 % Facts for a healthy individual
+<<<<<<< HEAD
+bodytemp(37.3).
+bloodpressure(130).
+=======
 bodytemp(37.0).
 systolic(100).
 diastolic(70).
+>>>>>>> c75f52a975b4e123d665551f9b9533fc2d0b6d64
 breathingrate(13).
 pulserate(75).
 
@@ -32,9 +37,15 @@ is_diastolic_high2(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=90, Di
 is_diastolic_crisis(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=120.
 
 % categories for abnormal blood pressures
+<<<<<<< HEAD
+is_elevated_blood(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 120, Pressure =< 129.
+is_high_blood_stg1(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure >= 130, Pressure =< 139.
+is_high_blood_stg2(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure >= 140, Pressure =< 180.
+=======
 is_elevated_blood(X) :- -is_normal_blood(Pressure), systolic(Sys), diastolic(Dia), Sys > 120, Sys =< 129, Dia > 80, Dia<=89.
 is_high_blood_stg1(X) :- -is_normal_blood(Pressure), systolic(Sys), diastolic(Dia), Sys > 130, Sys =< 139.
 is_high_blood_stg2(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 140, Pressure =< 180.
+>>>>>>> c75f52a975b4e123d665551f9b9533fc2d0b6d64
 % Call doctor immmediately. Emergency room
 is_high_blood_crisis(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 180.
 
@@ -45,7 +56,10 @@ has_fever(X) :- not is_normal_temp(Temp), Temp > 37.2.
 has_tachypnea(X) :- not is_normal_breath(Breath), Breath > 16.
 has_bradypnea(X) :- not is_normal_breath(Breath), Breath < 12.
 % categories for abnormal pulse rate
+% potential damage from heart attack, heart disease, congenital heart disease, high blood pressure, smoking
+has_tachycardia(X) :- not is_normal_pulse(Pulse), Pulse > 100. 
+has_bradycardia(X) :- not is_normal_pulse(Pulse), Pulse < 60.
 
 is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D).
-is_not_healthy :- not is_healthy.
+% is_not_healthy :- not is_healthy.
 
