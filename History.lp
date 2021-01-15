@@ -13,8 +13,7 @@ allergies(Confirmed, Potential).
 heartTrouble.
 stroke.
 -heartMurmur.
-
-cardioVascular disease:- heartTrouble, stroke, not heartMurmur.
+cardioVascular_disease:- heartTrouble, stroke, not heartMurmur.
 healthy_heart:- not cardio_vascular_disease.
 
 
@@ -43,10 +42,10 @@ asthma(X).
 %List of Duples of Parent and Type of Cancer
 cancer_history(List).
 %Diabetes of Duples of Family and Type of Diabtes
-diabete_history(List)
+diabete_history(List).
 %Heart Diease
-heart_diease_history(List)
+heart_diease_history(List).
 %Stroke
-stroke_history(List)
+stroke_history(List).
 %Migraines
-migraines_history(List)
+migraines_history(List).
