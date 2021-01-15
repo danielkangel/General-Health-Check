@@ -1,14 +1,14 @@
 %Psych Eval CheckList
 
-little_interest_or_pleasure(3).
-feeling_down(3).
-sleep_issues(3).
-low_energy(3).
-appetite_issues(3).
-low_self_esteem(3).
-focus_issues(3).
-moving_speed_issues(3).
-sucidal_thoughts(3).
+little_interest_or_pleasure(0).
+feeling_down(0).
+sleep_issues(0).
+low_energy(1).
+appetite_issues(0).
+low_self_esteem(2).
+focus_issues(0).
+moving_speed_issues(0).
+sucidal_thoughts(0).
 
 %#show little_interest_or_pleasure/0.
 %#show feeling_down/0.
@@ -110,4 +110,7 @@ risk_level(moderately_severe_depression):-moderately_severe.
 risk_level(moderate_depression):-moderate.
 risk_level(mild_depression):-mild.
 risk_level(minimal_depression):-minimal.
+
+major_despressive_disorder:-sum_shaded(X), X >= 5.
+consider_other_depressive:-sum_shaded(X), X >= 2, X =< 4.
 
