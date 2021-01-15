@@ -4,19 +4,12 @@
 %Example [[wisdom, 02/19],[tonsil, 8/20]]
 %surgical_history(X).
 
-%%List of Allegres
-%Example {[peanuts,...],[sulpha]}
-allergies(Confirmed, Potential).
-
-
 %Heart Problems in past five years
 heartTrouble.
 stroke.
 -heartMurmur.
 cardioVascular_disease:- heartTrouble, stroke, not heartMurmur.
 healthy_heart:- not cardio_vascular_disease.
-
-
 
 %Lifestyle Habits
 %tobacco(YorN, Packs_Day, Years).
