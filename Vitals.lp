@@ -7,7 +7,8 @@
 
 % Facts for a healthy individual
 bodytemp(37.3).
-bloodpressure(130).
+systolic(90).
+diastolic(100).
 breathingrate(13).
 pulserate(75).
 
@@ -17,25 +18,29 @@ is_normal_blood(X) :- systolic(Sys), diastolic(Dia), Sys =< 120, Dia =<80.
 is_normal_breath(X) :- breathingrate(Breath), Breath >= 12, Breath =< 16.
 is_normal_pulse(X) :-  pulserate(Pulse), Pulse >= 60, Pulse =< 100.
 
--is_normal_blood(X) :- not is_normal_blood(Pressure).
+not_normal_blood(X) :- not is_normal_blood(Pressure).
 
 % Systolic ranges
-is_systolic_elevated(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>120, Sys<130.
-is_systolic_high1(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys >= 130, Sys<140.
-is_systolic_high2(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>=140, Sys<180.
-is_systolic_crisis(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>=180.
+is_systolic_elevated(X) :- not_normal_blood(Pressure), systolic(Sys), Sys>120, Sys<130.
+is_systolic_high1(X) :- not_normal_blood(Pressure), systolic(Sys), Sys >= 130, Sys<140.
+is_systolic_high2(X) :- not_normal_blood(Pressure), systolic(Sys), Sys>=140, Sys<180.
+is_systolic_crisis(X) :- not_normal_blood(Pressure), systolic(Sys), Sys>=180.
 
 % Diastolic ranges
-is_diaslotic_high1(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>80, Dia<90.
-is_diastolic_high2(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=90, Dia<120.
-is_diastolic_crisis(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=120.
+is_diaslotic_high1(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>80, Dia<90.
+is_diastolic_high2(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>=90, Dia<120.
+is_diastolic_crisis(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>=120.
 
 % categories for abnormal blood pressures
-is_elevated_blood(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 120, Pressure =< 129.
-is_high_blood_stg1(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure >= 130, Pressure =< 139.
-is_high_blood_stg2(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure >= 140, Pressure =< 180.
+is_elevated_blood(X):- is_systolic_elevated(Sys), not is_high_blood_stg1(Z), not is_high_blood_stg2(Y), not is_high_blood_crisis(P).
+is_high_blood_stg1(X):- is_diaslotic_high1(Dya), not is_high_blood_crisis(Z), not is_high_blood_stg2(Y).
+is_high_blood_stg1(X):- is_systolic_high1(Sys), not is_high_blood_crisis(Z), not is_high_blood_stg2(Y).
+is_high_blood_stg2(X):- is_diastolic_high2(Dya), not is_high_blood_crisis(Sys).
+is_high_blood_stg2(X):- is_systolic_high2(Sys), not is_high_blood_crisis(Sys). 
+
 % Call doctor immmediately. Emergency room
-is_high_blood_crisis(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 180.
+is_high_blood_crisis(X) :- is_diastolic_crisis(Dya).
+is_high_blood_crisis(X) :- is_systolic_crisis(Sys).
 
 % categories for abnormal body temperatures
 has_fever(X) :- not is_normal_temp(Temp), Temp > 37.2.
