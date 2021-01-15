@@ -14,9 +14,7 @@
 #abducible sore_throat.
 #abducible body_ache.
 #abducible headache.
-fever(X):-temp(Temp), Temp .>=. 37.8.
-
-
+fever(X):-temp(Temp), Temp >= 37.8.
 
 %Two Point
 #abducible difficulty_breathing.
@@ -65,7 +63,7 @@ is_direct_contact_COVID(X):- direct_contact_COVID.
 sum_risk(X):-sum_risk_three(Three),sum_risk_two(Two),sum_risk_one(One), X is One + Two + Three.
 
 
-sum_risk_one(X):- sum_risk_one(X,[cold, headache, fever(A)]).
+sum_risk_one(X):- sum_risk_one(X,[cold, headache, fever]).
 %sum_risk_one(X):- sum_risk_one(X,[is_cough(A), is_cold(B), is_diarrhea(C), is_sore_throat(D), is_body_ache(E), is_headache(F), is_fever(G)]).
 sum_risk_one(X,[]):- X is 0.
 sum_risk_one(X,[H|T]):- call(H) , sum_risk_one(X1,T), X is X1 + 1.
