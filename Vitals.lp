@@ -11,6 +11,14 @@ systolic(90).
 diastolic(100).
 breathingrate(13).
 pulserate(75).
+cholesterol(200).
+
+
+%checks cholesterol
+cholesterol_normal(X) :- cholesterol(Z), Z<200.
+cholesterol_border(X) :- cholesterol(Z), Z>200 ; Z<240.
+cholesterol_high(X) :- cholesterol(Z), Z>240.
+
 
 % normal vitals
 is_normal_temp(X) :- bodytemp(Temp), Temp >= 36.1, Temp =< 37.2.
@@ -60,6 +68,6 @@ has_bradypnea(X) :- not is_normal_breath(Breath), Breath < 12.
 has_tachycardia(X) :- not is_normal_pulse(Pulse), Pulse > 100. 
 has_bradycardia(X) :- not is_normal_pulse(Pulse), Pulse < 60.
 
-is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D).
+is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D), cholesterol_normal(Z).
 % is_not_healthy :- not is_healthy.
 
