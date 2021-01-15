@@ -8,24 +8,34 @@
 %Example {[peanuts,...],[sulpha]}
 allergies(Confirmed, Potential).
 
+
+%Heart Problems in past five years
+heartTrouble.
+stroke.
+-heartMurmur.
+
+cardioVascular disease:- heartTrouble, stroke, not heartMurmur.
+healthy_heart:- not cardio_vascular_disease.
+
+
+
 %Lifestyle Habits
 %tobacco(YorN, Packs_Day, Years).
-
 lung_cancer(medium_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day =< 1, Years <= 1.
 lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day >= 1.
 lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
+
 
 %True or False
 %marijuana.
 caffeine()
 %alchol_consumption(YorN, Frequency).
-
 excercise(Minutes_Per_Week).
 
 
 %Sexually Active
 %Did not want into it for now
-
+%If ur name is Viggy its false I swear
 
 %FamilyHistory
 alcohol_abuse(X).
