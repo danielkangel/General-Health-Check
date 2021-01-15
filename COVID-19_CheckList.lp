@@ -70,11 +70,15 @@ sum_risk_three(X,[H|T]):- sum_risk_three(X,T).
 
 
 may_be_stress(X):-sum_risk(Risk), Risk >= 0, Risk =< 2.
+%-may_be_stress(X):-not may_be_stress(X).
 low_risk(X):- sum_risk(Risk), Risk >= 3, Risk =< 5.
+%-low_risk(X):-not low_risk(X).
 %Consult Doctor
 medium_risk(X):- sum_risk(Risk), Risk >= 6, Risk =< 12.
+%-medium_risk(X):-not medium_risk(X).
 %Seek Medical Attention
 high_risk(X):- sum_risk(Risk), Risk >= 12, Risk =< 24.
+%-high_risk(X):-not high_risk(X).
 
 risk_level(high):-high_risk(X).
 risk_level(medium):-medium_risk(X).
