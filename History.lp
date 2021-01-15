@@ -20,14 +20,19 @@ healthy_heart:- not cardio_vascular_disease.
 
 %Lifestyle Habits
 %tobacco(YorN, Packs_Day, Years).
+<<<<<<< HEAD
 lung_cancer(medium_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day =< 1, Years <= 1.
+=======
+
+lung_cancer(medium_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day =< 1, Years =< 1.
+>>>>>>> b2fc6afed3391da85622a530b312b928af3f2256
 lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day >= 1.
 lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
 
 
 %True or False
 %marijuana.
-caffeine()
+%caffeine()
 %alchol_consumption(YorN, Frequency).
 excercise(Minutes_Per_Week).
 
