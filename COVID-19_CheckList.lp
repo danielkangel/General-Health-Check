@@ -11,20 +11,29 @@ temp(40.0).
 %headache.
 fever(X):-temp(Temp), Temp >= 37.8.
 
-is_cough(X):-cough.
-is_cold(X):-cold.
-is_diarrhea(X):-diarrhea.
-is_sore_throat(X):-sore_throat.
-is_body_ache(X):-body_ache.
-is_headache(X):-headache.
-is_fever(X):-fever(X).
+is_cough(X):- cough.
+-is_cough(X):- not cough.
+is_cold(X):- cold.
+-is_cold(X):- not cold.
+is_diarrhea(X):- diarrhea.
+-is_diarrhea(X):- not diarrhea.
+is_sore_throat(X):- sore_throat.
+-is_sore_throat(X):- not sore_throat.
+is_body_ache(X):- body_ache.
+-is_body_ache(X):- not body_ache.
+is_headache(X):- headache.
+-is_headache(X):- not headache.
+is_fever(X):- fever(X).
+-is_fever(X):- not fever(X).
 
 %Two Point
 %difficulty_breathing.
 %feeling_tired.
 
-is_difficulty_breathing(X):-difficulty_breathing.
-is_feeling_tired(X):-feeling_tired.
+is_difficulty_breathing(X):- difficulty_breathing.
+-is_difficulty_breathing(X):- not difficulty_breathing.
+is_feeling_tired(X):- feeling_tired.
+-is_feeling_tired(X):- not feeling_tired.
 
 %Three point
 %traveled_14.
@@ -32,8 +41,11 @@ is_feeling_tired(X):-feeling_tired.
 %direct_contact_COVID.
 
 is_traveled_14(X):- traveled_14.
+-is_traveled_14(X):- not traveled_14.
 is_travel_to_COVID_Area(X):- travel_to_COVID_Area.
+-is_travel_to_COVID_Area(X):- not travel_to_COVID_Area.
 is_direct_contact_COVID(X):- direct_contact_COVID.
+-is_direct_contact_COVID(X):- not direct_contact_COVID.
 
 
 sum_risk(X):-sum_risk_three(Three),sum_risk_two(Two),sum_risk_one(One), X is One + Two + Three.
