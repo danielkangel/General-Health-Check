@@ -2,7 +2,7 @@
 
 %%List of Operation and Operation Dates
 %Example [[wisdom, 02/19],[tonsil, 8/20]]
-surgical_history(X).
+%surgical_history(X).
 
 %%List of Allegres
 %Example {[peanuts,...],[sulpha]}
