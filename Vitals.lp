@@ -12,6 +12,9 @@ cholesterol_normal(X) :- cholesterol(Z), Z<200.
 cholesterol_border(X) :- cholesterol(Z), Z>=200, Z=<240.
 cholesterol_high(X) :- cholesterol(Z), Z>240.
 
+chol(high):- cholesterol_high(A).
+chol(border):- cholesterol_border(B).
+chol(normal):- cholesterol_normal(C).
 
 % normal vitals
 is_normal_temp(Temp) :- bodytemp(Temp), Temp >= 36.1, Temp =< 37.2.
@@ -69,6 +72,9 @@ pulse(normal) :- is_normal_pulse(C).
 breath(tachypnea) :- has_tachypnea(A).
 breath(bradycardia) :- has_bradycardia(B).
 breath(normal) :- is_normal_breath(C).
+
+temp(fever):- has_fever(A).
+temp(normal):- is_normal_temp(B).
 
 is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D), cholesterol_normal(Z).
 -is_healthy(X) :- not is_healthy(X), write('Consult a doctor for abnormalities').

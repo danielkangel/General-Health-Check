@@ -15,7 +15,8 @@
 % pulserate(75).
 % cholesterol(200).
 
-%?-person1, -is_healthy(X).
+%?- bloodpressure(A).
+%?- -is_healthy(X).
 
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -23,16 +24,16 @@
 %%%%%%%%%%%%%%%%%%%%%
 % Facts for a not healthy individual : Cholesterol, pulserate and breathing rate is too high
 
-bodytemp(37).
-systolic(90).
-diastolic(70).
-breathingrate(17).
-pulserate(110).
-cholesterol(220).
+% bodytemp(37).
+% systolic(90).
+% diastolic(70).
+% breathingrate(17).
+% pulserate(110).
+% cholesterol(220).
 
-?-pulse(A).
-% ?-has_tachypnea(B).
-% ?-cholesterol_border(A).
+% ?-pulse(A).
+% ?-breath(B).
+% ?-chol(C).
 
 %%%%%%%%%%%%%%%%%%%%%
 % Test Case 3
@@ -47,4 +48,6 @@ cholesterol(220).
 % cholesterol(200).
 
 %?-is_healthy(X).
-% ?-blood_pressure(A).
+%?-blood_pressure(A).
+%?-pulse(B).
+%?-breath(C).
