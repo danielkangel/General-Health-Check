@@ -1,0 +1,21 @@
+%COVID Check Premilnary Questions
+
+cough  1
+Cold 1
+diarreha 1
+sore_throat 1
+body_ache || muscle_soreness 1
+ 1
+headache 1
+fever 37.8>= 1
+difficulty_breathing 2
+experiecning_fatigue 2
+traveled_14 3
+travel_to_COVID_Area 3 
+direct_contact_COVID 3
+
+total sum for risk
+0-2 
+3-5 hydrate and proper wait 
+6-12 medium
+12-14 high
