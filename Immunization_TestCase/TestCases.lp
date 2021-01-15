@@ -6,10 +6,14 @@
 %%%%%%%%%%%%%%%
 %Test 1
 %%%%%%%%%%%%%%%
-person1:- meningitis, polio, bcg, hepatitis_b, rubella.
+%meningitis.
+%polio. 
+%bcg. 
+%hepatitis_b. 
+%rubella.
 
 
-%?- person1, missing_vaccines(A,B).
+%?- missing_vaccines(A,B).
 
 %%%%%%%%%%%%%%%
 
@@ -18,9 +22,13 @@ person1:- meningitis, polio, bcg, hepatitis_b, rubella.
 %Test 2
 %%%%%%%%%%%%%%%
 
-person2:- meningitis, polio, bcg, hepatitis_b, rubella.
+%meningitis.
+%polio. 
+%bcg. 
+%hepatitis_b. 
+%rubella.
 
-%?- person2, vaccinated(A).
+%?- vaccinated(A).
 
 %%%%%%%%%%%%%%%
 
@@ -29,8 +37,15 @@ person2:- meningitis, polio, bcg, hepatitis_b, rubella.
 %Test 3
 %%%%%%%%%%%%%%%
 
-person3:- flu_shot, meningitis, bcg, hepatitis_b, rubella, polio, measles, tetanus.
+%flu_shot. 
+%meningitis. 
+%bcg. 
+%hepatitis_b. 
+%rubella. 
+%polio. 
+%measles. 
+%tetanus.
 
-%?- person3, vaccinated(A).
+%?- vaccinated(A).
 
 %%%%%%%%%%%%%%%
