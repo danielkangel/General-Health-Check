@@ -33,7 +33,7 @@ not_vaccine(rubella, X):- not is_rubella(X).
 not_vaccine(polio, X):- not is_polio(X).
 not_vaccine(meningitis, X):- not is_meningitis(X). 
 not_vaccine(measles, X):- not is_measles(X).
-not_vaccine(hepatitis_b, X):- not is_heptatitis_b(X).
+not_vaccine(hepatitis_b, X):- not is_hepatitis_b(X).
 not_vaccine(tetanus, X):- not is_tetanus(X).
 
 
