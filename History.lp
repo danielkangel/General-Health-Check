@@ -37,7 +37,7 @@ sums_the_risk(X, [H|T]):- not call(H), sums_the_risk(X,T).
 
 highRiskType1 :- 
     age(Age), obese(X), not is_normal_blood(Pressure), excercise(Minutes_Per_Week),
-   Minutes_Per_Week < 150,Age>45.
+   Minutes_Per_Week < 150,Age<20.
 
 highRiskType2 :- 
     age(Age), obese(X), not is_normal_blood(Pressure), excercise(Minutes_Per_Week),

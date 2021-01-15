@@ -1,11 +1,11 @@
 %Psych Eval CheckList
 
 little_interest_or_pleasure(0).
-feeling_down(0).
-sleep_issues(0).
-low_energy(1).
-appetite_issues(0).
-low_self_esteem(2).
+feeling_down(3).
+sleep_issues(3).
+low_energy(3).
+appetite_issues(3).
+low_self_esteem(3).
 focus_issues(0).
 moving_speed_issues(0).
 sucidal_thoughts(0).
