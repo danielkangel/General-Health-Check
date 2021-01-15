@@ -13,7 +13,6 @@ healthy_heart:- not cardio_vascular_disease.
 
 %Lifestyle Habits
 %tobacco(YorN, Packs_Day, Years).
-
 lung_cancer(medium_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day =< 1, Years =< 1.
 lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Packs_Day >= 1.
 lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
@@ -26,20 +25,27 @@ lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
 excercise(Minutes_Per_Week).
 
 
-%Sexually Active
-%Did not want into it for now
-%If ur name is Viggy its false I swear
-
 %FamilyHistory
 alcohol_abuse(X).
 asthma(X).
 %List of Duples of Parent and Type of Cancer
 cancer_history(List).
 %Diabetes of Duples of Family and Type of Diabtes
-diabete_history(List).
+diabetes_history(List).
 %Heart Diease
 heart_diease_history(List).
 %Stroke
 stroke_history(List).
 %Migraines
 migraines_history(List).
+
+%type 1 diabetes happens to ppl at a younger age 
+%bmi kg/m^2   70 percent risk for those with 35kg/m^2
+%highRiskType1 :- genetic
+
+excercise(130).
+
+
+highRiskType2 :- 
+    age(Age), obese(X), not is_normal_blood(Pressure), excercise(Minutes_Per_Week),
+    Minutes_Per_Week < 150,Age>45.
