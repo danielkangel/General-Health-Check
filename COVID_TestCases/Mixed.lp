@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%
-%Forward Pass with Missing Information
+%Forward Pass with Missing Information and Mixed
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
