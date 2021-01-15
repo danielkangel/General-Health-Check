@@ -22,7 +22,7 @@ patient1:-cough, cold, sore_throat,feeling_tired, not diarrhea,
 %'time scasp -n0 ForwardPass.lp' will return speed of program and answer
 %%%%%%%%%%%%%%%
 
-%?-patient1, sum_risk(X).
+?-patient1, sum_risk(X).
 %Answer = _
 %Number of Models = 8
 %In other words, eight different models were made.

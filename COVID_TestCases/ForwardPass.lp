@@ -72,7 +72,7 @@ patient3:-cough, cold, not sore_throat, feeling_tired, not diarrhea,
 %'time scasp -n0 ForwardPass.lp' will return speed of program and answer
 %%%%%%%%%%%%%%%
 
-%?-patient3, sum_risk(X).
+?-patient3, sum_risk(X).
 %Answer = 14
 
 %%%%%%%%%%%%%%%
@@ -101,7 +101,7 @@ patient4:-cough, cold, not sore_throat, not feeling_tired, not diarrhea,
 
 %%%%%%%%%%%%%%%
 
-?-patient4, risk_level(X).
+%?-patient4, risk_level(X).
 %Answer = stress
 
 %%%%%%%%%%%%%%%

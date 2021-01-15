@@ -12,7 +12,6 @@
 meningitis.
 polio. 
 bcg. 
-hepatitis_b. 
 rubella.
 
 % Uncomment each query and run the file with
@@ -23,8 +22,8 @@ rubella.
 
 %%%%%%%%%%%%%%%%
 
-%?- missing_vaccines(A,B).
-%Answer = [flu, tetanus, measles]
+?- missing_vaccines(A,B).
+%Answer = [flu,tetanus,hepatitis_b,measles]
 
 %%%%%%%%%%%%%%
 

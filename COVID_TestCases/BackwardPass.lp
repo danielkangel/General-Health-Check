@@ -30,7 +30,7 @@
 %Test 2
 %%%%%%%%%%%%%%%
 
-%?-sum_risk(12).
+?-sum_risk(12).
 %Number of Combinations = 188
 %Time it takes to run = 34 secs
 
