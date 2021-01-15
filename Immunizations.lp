@@ -40,3 +40,9 @@ not_vaccine(hepatitis_b, X):- not is_heptatitis_b(X).
 not_vaccine(tetanus, X):- not is_tetanus(X).
 
 missing_vaccines(X, Vaccines):-findall(V, not_vaccine(V, X), Vaccines).
+
+sum_risk_immune(X):- sum_risk_immune(X,[is_tetanus(X), is_rubella(X), is_bcg(X), is_meningitis(X), is_measles(X), is_flu_shot(X), is_polio(X), is_hepatitis_b(X)]).
+
+sum_risk_immune(X,[]):- X is 0.
+sum_risk_immune(X,[H|T]):- call(H), sum_risk_immune(X1,T) , X is X1 + 2.
+sum_risk_immune(X,[H|T]):- not call(H), sum_risk_immune(X,T).
