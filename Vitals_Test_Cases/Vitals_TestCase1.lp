@@ -8,12 +8,12 @@
 % ANSWER: 1 (in 0.0 ms)
 
 
-% bodytemp(37).
-% systolic(90).
-% diastolic(100).
-% breathingrate(13).
-% pulserate(75).
-% cholesterol(200).
+bodytemp(37).
+systolic(90).
+diastolic(100).
+breathingrate(13).
+pulserate(75).
+cholesterol(200).
 
 %?- bloodpressure(A).
 %?- -is_healthy(X).
