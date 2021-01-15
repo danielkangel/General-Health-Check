@@ -1,18 +1,3 @@
-% Immunizations
-
-% Common vaccines
-bcg.
-meningitis.
-hepatitis_b.
-polio.
-measles.
-rubella.
-pneumonia.
-tetanus.
-
-%List of Dates
-flu_shot.
-
 % Check the status 
 is_bcg(X) :- bcg.
 -is_bcg(X) :- not bcg.
@@ -54,4 +39,4 @@ not_vaccine(measles, X):- not is_measles(X).
 not_vaccine(hepatitis_b, X):- not is_heptatitis_b(X).
 not_vaccine(tetanus, X):- not is_tetanus(X).
 
-missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
+missing_vaccines(X, Vaccines):-findall(V, not_vaccine(V, X), Vaccines).

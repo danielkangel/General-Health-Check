@@ -1,18 +1,10 @@
 % Vital Signs body temp, blood pressure, rate of breathing, pulse rate
 
 % Body temperature normal range: 36.1C - 37.2C
-% Blood pressure normal range: 80mm/Hg - 120mm/Hg
+% Blood pressure normal range: systolic 80mm/Hg - 120mm/Hg, diastolic < 80mm/Hg
 % Rate of breathing normal range: 12 - 16 breaths per minute
 % Resting pulse rate normal range: 60-100 beats/min
 % Cholesterol levels normal range: < 200 mg/DL
-
-% Facts for a healthy individual
-bodytemp(37.3).
-systolic(90).
-diastolic(100).
-breathingrate(13).
-pulserate(75).
-cholesterol(200).
 
 
 %checks cholesterol
@@ -36,7 +28,7 @@ is_systolic_high2(X) :- not_normal_blood(Pressure), systolic(Sys), Sys>=140, Sys
 is_systolic_crisis(X) :- not_normal_blood(Pressure), systolic(Sys), Sys>=180.
 
 % Diastolic ranges
-is_diaslotic_high1(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>80, Dia<90.
+is_diastolic_high1(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>80, Dia<90.
 is_diastolic_high2(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>=90, Dia<120.
 is_diastolic_crisis(X) :- not_normal_blood(Pressure), diastolic(Dia), Dia>=120.
 
@@ -70,5 +62,5 @@ has_tachycardia(X) :- not is_normal_pulse(Pulse), Pulse > 100.
 has_bradycardia(X) :- not is_normal_pulse(Pulse), Pulse < 60.
 
 is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D), cholesterol_normal(Z).
--is_healthy :- not is_healthy.
+-is_healthy(X) :- not is_healthy(X).
 
