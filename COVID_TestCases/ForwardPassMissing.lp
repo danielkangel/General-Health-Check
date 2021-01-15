@@ -48,9 +48,9 @@ patient1:-cough, cold, sore_throat,feeling_tired, not diarrhea,
 %%%%%%%%%%%%%%%
 
 
-patient2:-body_ache, headache, not difficulty_breathing,
-    traveled_14, travel_to_COVID_Area,
-    not direct_contact_COVID.
+patient2:-cough, cold, not sore_throat, feeling_tired, not diarrhea,
+    body_ache, headache, difficulty_breathing,
+    direct_contact_COVID.
 
 %Uncomment Each Query and run the file with:
 %'time scasp -n0 ForwardPass.lp' will return speed of program and answer
@@ -58,13 +58,13 @@ patient2:-body_ache, headache, not difficulty_breathing,
 
 ?-patient2, sum_risk(X).
 %Answer = Multiple Models
-%Number of Models = 32
+%Number of Models = 3
 
 %%%%%%%%%%%%%%%
 
-?-patient2, risk_level(X).
-%Answer = Multiple Models ranging from medium to high
-%Number of Models = 39
+?-patient2, risk_level(high).
+%Answer = Multiple Models
+%Number of Models = 3
 
 %%%%%%%%%%%%%%%
 
