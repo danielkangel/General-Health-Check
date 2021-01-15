@@ -1,19 +1,30 @@
 %%Patient History / Current
 
 %Heart issues in the past 5 years
-heartAttack.
+heart_attack.
 stroke.
-heartMurmur.
-cardioVascular_disease(X):- heartAttack, stroke, heartMurmur.
+heart_murmur.
+
+% Define patient's heart condition
+cardio_vascular_disease(X):- heart_attack, stroke, heart_murmur.
 healthy_heart:- not cardio_vascular_disease.
 
 
-%Bones
+% Bone conditions 
 osteoporosis.
+scoliosis.
+arthiritis.
+fractures.
+% Define bone condition
+weak_bones :- osteoporosis.
+weak_bones :- scoliosis.
+weak_bones :- fractures.
+weak_bones :- arthiritis.
 
-
-
-
+% Kidney conditions
+kidney_stones.
+kidney_disease.
+weak_kidney.
 
 
 %%List of Operation and Operation Dates

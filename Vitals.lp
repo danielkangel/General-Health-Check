@@ -4,6 +4,7 @@
 % Blood pressure normal range: 80mm/Hg - 120mm/Hg
 % Rate of breathing normal range: 12 - 16 breaths per minute
 % Resting pulse rate normal range: 60-100 beats/min
+% Cholesterol levels normal range: < 200 mg/DL
 
 % Facts for a healthy individual
 bodytemp(37.3).
