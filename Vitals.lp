@@ -61,6 +61,15 @@ has_bradypnea(X) :- not is_normal_breath(Breath), Breath < 12.
 has_tachycardia(X) :- not is_normal_pulse(Pulse), Pulse > 100. 
 has_bradycardia(X) :- not is_normal_pulse(Pulse), Pulse < 60.
 
+% The actual intelligent answer set programming
+pulse(tachycardia) :- has_tachycardia(A).
+pulse(bradycardia) :- has_bradycardia(B).
+pulse(normal) :- is_normal_pulse(C).
+
+breath(tachypnea) :- has_tachypnea(A).
+breath(bradycardia) :- has_bradycardia(B).
+breath(normal) :- is_normal_breath(C).
+
 is_healthy(X) :- is_normal_blood(A), is_normal_breath(B), is_normal_pulse(C), is_normal_temp(D), cholesterol_normal(Z).
--is_healthy(X) :- not is_healthy(X).
+-is_healthy(X) :- not is_healthy(X), write('Consult a doctor for abnormalities').
 
