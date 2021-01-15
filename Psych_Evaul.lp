@@ -14,30 +14,50 @@ problems_affected_work_or_home(X).
 
 shade_1(X):-little_interest_or_pleasure(2).
 shade_1(X):-little_interest_or_pleasure(3).
+-shade_1(X):-little_interest_or_pleasure(0).
+-shade_1(X):-little_interest_or_pleasure(1).
 
 shade_2(X):-feeling_down(2).
 shade_2(X):-feeling_down(3).
+-shade_2(X):-feeling_down(0).
+-shade_2(X):-feeling_down(1).
 
 shade_3(X):-sleep_issues(2).
 shade_3(X):-sleep_issues(3).
+-shade_3(X):-sleep_issues(0).
+-shade_3(X):-sleep_issues(1).
 
 shade_4(X):-low_energy(2).
 shade_4(X):-low_energy(3).
+-shade_4(X):-low_energy(0).
+-shade_4(X):-low_energy(1).
 
 shade_5(X):-appetite_issues(2).
 shade_5(X):-appetite_issues(3).
+-shade_5(X):-appetite_issues(0).
+-shade_5(X):-appetite_issues(1).
 
 shade_6(X):-low_self_esteem(2).
 shade_6(X):-low_self_esteem(3).
+-shade_6(X):-low_self_esteem(0).
+-shade_6(X):-low_self_esteem(1).
 
 shade_7(X):-focus_issues(2).
 shade_7(X):-focus_issues(3).
+-shade_7(X):-focus_issues(0).
+-shade_7(X):-focus_issues(1).
 
 shade_8(X):-moving_speed_issues(2).
 shade_8(X):-moving_speed_issues(3).
+-shade_8(X):-moving_speed_issues(0).
+-shade_8(X):-moving_speed_issues(1).
 
 shade_9(X):-sucidal_thoughts(2).
-shade_9(X):-sucidal_thoughts(2).
+shade_9(X):-sucidal_thoughts(3).
+-shade_9(X):-sucidal_thoughts(0).
+-shade_9(X):-sucidal_thoughts(1).
 
+shade_10(X):-problems_affected_work_or_home(1).
 shade_10(X):-problems_affected_work_or_home(2).
 shade_10(X):-problems_affected_work_or_home(3).
+-shade_10(X):-problems_affected_work_or_home(0)
