@@ -7,22 +7,36 @@
 
 % Facts for a healthy individual
 bodytemp(37.0).
-bloodpressure(100).
+systolic(100).
+diastolic(70).
 breathingrate(13).
 pulserate(75).
 
 % normal vitals
 is_normal_temp(X) :- bodytemp(Temp), Temp >= 36.1, Temp =< 37.2.
-is_normal_blood(X) :- bloodpressure(Pressure), Pressure >= 80, Pressure =< 120.
+is_normal_blood(X) :- systolic(Sys), diastolic(Dia), Sys =< 120, Dia =<80.
 is_normal_breath(X) :- breathingrate(Breath), Breath >= 12, Breath =< 16.
 is_normal_pulse(X) :-  pulserate(Pulse), Pulse >= 60, Pulse =< 100.
 
+-is_normal_blood(X) :- not is_normal_blood(Pressure);
+
+% Systolic ranges
+is_systolic_elevated(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>120, Sys<130.
+is_systolic_high1(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys >= 130, Sys<140.
+is_systolic_high2(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>=140, Sys<180.
+is_systolic_crisis(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>=180.
+
+% Diastolic ranges
+is_diaslotic_high1(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>80, Dia<90.
+is_diastolic_high2(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=90, Dia<120.
+is_diastolic_crisis(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=120.
+
 % categories for abnormal blood pressures
-is_elevated_blood(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 120, Pressure =< 129.
-is_high_blood_stg1(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 130, Pressure =< 139.
-is_high_blood_stg2(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 140, Pressure =< 180.
+is_elevated_blood(X) :- -is_normal_blood(Pressure), systolic(Sys), diastolic(Dia), Sys > 120, Sys =< 129, Dia > 80, Dia<=89.
+is_high_blood_stg1(X) :- -is_normal_blood(Pressure), systolic(Sys), diastolic(Dia), Sys > 130, Sys =< 139.
+is_high_blood_stg2(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 140, Pressure =< 180.
 % Call doctor immmediately. Emergency room
-is_high_blood_crisis(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 180.
+is_high_blood_crisis(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 180.
 
 % categories for abnormal body temperatures
 has_fever(X) :- not is_normal_temp(Temp), Temp > 37.2.
