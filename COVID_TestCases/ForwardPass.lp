@@ -10,4 +10,6 @@ person1:-cough, cold, sore_throat,feeling_tired, not diarrhea,
     not direct_contact_COVID.
 
 
-?-  person1,sum_risk(X).
+?- person1, sum_risk(X).
+
+%%%

@@ -1,10 +1,7 @@
 #include '../Immunizations.lp'.
 
-meningitis.
-polio.
-bcg.
-hepatitis_b.
-rubella.
+
+person1:- meningitis, polio, bcg, hepatitis_b, rubella.
 
 
-?- missing_vaccines(A,B).
+?- person1, missing_vaccines(A,B).
