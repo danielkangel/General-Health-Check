@@ -1,21 +1,50 @@
 #include '../Vitals.lp'.
-
+%%%%%%%%%%%%%%%%%%%%%
+% Test Case 1
+%%%%%%%%%%%%%%%%%%%%%
 % Facts for a not healthy individual : Diastolic blood pressure is too high
-
-person1:-bodytemp(37), systolic(90), diastolic(100), breathingrate(13), pulserate(75),
-        cholesterol(200).
-
-?- -is_healthy(X).
-
-% Facts for a not healthy individual : temperature is too high and breathing rate is too
+% Expected results : QUERY:?- -is_healthy(A).
+% 'Consult a doctor for abnormalities'
+% ANSWER: 1 (in 0.0 ms)
 
 
-person2:-bodytemp(38),systolic(90), diastolic(70), breathingrate(17), pulserate(75),cholesterol(200).
+% bodytemp(37).
+% systolic(90).
+% diastolic(100).
+% breathingrate(13).
+% pulserate(75).
+% cholesterol(200).
 
-?-person2, has_fever(X).
-
-% Facts for a not healthy individual : Diastolic blood pressure is too high
+%?-person1, -is_healthy(X).
 
 
-person3:-bodytemp(37), systolic(90), diastolic(100), breathingrate(17), 
-        pulserate(75), cholesterol(200).
+%%%%%%%%%%%%%%%%%%%%%
+% Test Case 2
+%%%%%%%%%%%%%%%%%%%%%
+% Facts for a not healthy individual : Cholesterol, pulserate and breathing rate is too high
+
+bodytemp(37).
+systolic(90).
+diastolic(70).
+breathingrate(17).
+pulserate(110).
+cholesterol(220).
+
+?-pulse(A).
+% ?-has_tachypnea(B).
+% ?-cholesterol_border(A).
+
+%%%%%%%%%%%%%%%%%%%%%
+% Test Case 3
+%%%%%%%%%%%%%%%%%%%%%
+% Facts for a not healthy individual : Resting pulse rate is too high, Diastolic blood pressure is too high, breathing rate is too high
+
+% bodytemp(37).
+% systolic(90).
+% diastolic(100).
+% breathingrate(17). 
+% pulserate(125).
+% cholesterol(200).
+
+%?-is_healthy(X).
+% ?-blood_pressure(A).
