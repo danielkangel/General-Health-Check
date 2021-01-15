@@ -22,6 +22,6 @@ overweight(X):-bmi(B), B >= 25, B < 30.
 obese(X):-bmi(B), B >= 30.
 
 general_weight(underweight):- underweight(X).
-general_weight(healhty_weight):- ormal_weight(X).
+general_weight(healhty_weight):- normal_weight(X).
 general_weight(overweight):- overweight(X).
 general_weight(obese):- obese(X).
