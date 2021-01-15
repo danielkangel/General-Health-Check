@@ -13,63 +13,118 @@
         <hr>
         <form>
         <h2 class="display-4">COVID-19 Health Check</h2>
-            <section class="form-row my-4 p-3">
-                <div class="col-10">
-                    <h3 class="question">Have you been in contact with any persons who tested positive for COVID-19 in the past 14 days?</h3>
-                </div>
-                <div class="form-group col-2">
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label mx-1" for="q1_yes">Y </label>
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="q1_yes" value="q1">
-                        <label class="form-check-label mx-1" for="q1_no">N </label>
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="q1_no" value="q1">
+            <section class="my-4 p-3">
+                <div class="form-row">
+                    <div class="col-10">        
+                        <h3 class="question">Have you been in contact with any persons who tested positive for COVID-19 in the past 14 days?</h3>
+                    </div>
+                    <div class="form-group col-2">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label mx-1" for="q1_yes">Y </label>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q1_yes" value="q1">
+                            <label class="form-check-label mx-1" for="q1_no">N </label>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q1_no" value="q1">
+                        </div>
                     </div>
                 </div>
             </section>
             <hr>
-            <section class="form-row my-4 p-3">
-              <div class="form-group col-md-5">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="John" autocomplete="off" required>
-              </div>
-              <div class="form-group col-md-5">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Smith" autocomplete="off" required>
-              </div>
-              <div class="form-group col-md-2">
-                  <label for="age">Age</label>
-                  <input type="number" min="0" max="120" class="form-control" placeholder="Age" autocomplete="off" required>
-              </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="height">Height</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control" id="height" placeholder="Height" min="0" autocomplete="off" required>
-                        <div class="input-group-append">
-                          <div class="input-group-text">in.</div>
-                        </div>
-                      </div>
+            <section class="my-4 p-3">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="John" autocomplete="off" required>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Smith" autocomplete="off" required>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="age">Age</label>
+                        <input type="number" min="0" max="120" class="form-control" placeholder="Age" autocomplete="off" required>
+                    </div>
                 </div>
-                <div class="form-group col-md-3">
-                    <label for="weight">Weight</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control" id="weight" placeholder="Weight" min="0" autocomplete="off" required>
-                        <div class="input-group-append">
-                          <div class="input-group-text">lbs.</div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="height">Height</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="height" placeholder="Height" min="0" autocomplete="off" required>
+                            <div class="input-group-append">
+                            <div class="input-group-text">in.</div>
+                            </div>
                         </div>
-                      </div>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="sex">Sex</label>
-                    <select class="form-control" id="sex" required>
-                        <option selected="selected">Choose...</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="weight">Weight</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="weight" placeholder="Weight" min="0" autocomplete="off" required>
+                            <div class="input-group-append">
+                            <div class="input-group-text">lbs.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sex">Sex</label>
+                        <select class="form-control" id="sex" required>
+                            <option selected="selected">Choose...</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
                 </div>
             </section>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <hr>
+            <h2 class="display-4">Past Vaccinations</h2>
+            <section class="my-4 p-3">
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="meningitis">
+                        <label for="meningitis" class="text-capitalize checkBoxLabel"> meningitis </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="hepatitis_b">
+                        <label for="hepatitis_b" class="text-capitalize checkBoxLabel"> hepatitis b </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="polio">
+                        <label for="polio" class="text-capitalize checkBoxLabel"> polio </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="measles">
+                        <label for="measles" class="text-capitalize checkBoxLabel"> measles </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="rubella">
+                        <label for="rubella" class="text-capitalize checkBoxLabel"> rubella </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="pneumonia">
+                        <label for="pneumonia" class="text-capitalize checkBoxLabel"> pneumonia </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col justify-content-start">
+                        <input type="checkbox" name="vaccines" id="tetanus">
+                        <label for="tetanus" class="text-capitalize checkBoxLabel"> tetanus </label>
+                    </div>
+                </div>
+            </section>
+            <button type="submit" class="btn btn-primary">Create File</button>
           </form>
     </main>
 
