@@ -58,7 +58,7 @@ patient2:-cough, cold, not sore_throat, feeling_tired, not diarrhea,
 
 %?-patient2, sum_risk(X).
 %Answer = Multiple Models
-%Number of Models = 3
+%Number of Models = 4
 
 %%%%%%%%%%%%%%%
 
@@ -66,9 +66,26 @@ patient2:-cough, cold, not sore_throat, feeling_tired, not diarrhea,
 %Answer = Multiple Models
 %Number of Models = 3
 
+%?-patient2, risk_level(medium).
+%Answer = Multiple Models
+%Number of Models = 1
+
 %%%%%%%%%%%%%%%
 
+#show cough/0.
+#show cold/0.
+#show diarrhea/0.
+#show sore_throat/0.
+#show body_ache/0.
+#show headache/0.
 
+#show difficulty_breathing/0.
+#show feeling_tired/0.
+
+%Three point
+#show traveled_14/0.
+#show travel_to_COVID_Area/0.
+#show direct_contact_COVID/0.
 
 
 

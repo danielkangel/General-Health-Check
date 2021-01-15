@@ -100,8 +100,8 @@ neg_medium_risk(X):- sum_risk(Risk), Risk < 6.
 neg_medium_risk(X):- sum_risk(Risk), Risk > 12.
 
 %Seek Medical Attention
-high_risk(X):- sum_risk(Risk), Risk >= 12, Risk =< 24.
-neg_high_risk(X):-sum_risk(Risk), Risk < 12.
+high_risk(X):- sum_risk(Risk), Risk >= 13, Risk =< 24.
+neg_high_risk(X):-sum_risk(Risk), Risk < 13.
 
 
 risk_level(high):-high_risk(X).

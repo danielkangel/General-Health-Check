@@ -53,4 +53,18 @@
 
 %%%%%%%%%%%%%%%
 
+#show cough/0.
+#show cold/0.
+#show diarrhea/0.
+#show sore_throat/0.
+#show body_ache/0.
+#show headache/0.
+
+#show difficulty_breathing/0.
+#show feeling_tired/0.
+
+%Three point
+#show traveled_14/0.
+#show travel_to_COVID_Area/0.
+#show direct_contact_COVID/0.
 
