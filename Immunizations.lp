@@ -35,3 +35,7 @@ not_vaccine(meningitis, X):- not is_meningitis(X).
 not_vaccine(measles, X):- not is_measles(X).
 not_vaccine(hepatitis_b, X):- not is_heptatitis_b(X).
 not_vaccine(tetanus, X):- not is_tetanus(X).
+
+
+% Find all non vaccines
+missing_vaccines(X, Vaccines):-findall(V, not_vaccine(V, X), Vaccines).
