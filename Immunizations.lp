@@ -45,21 +45,13 @@ vaccinated(yes):-is_vaccinated(X).
 vaccinated(no):- not is_vaccinated(X).
 
 % WIP
-not_vaccine(bcg, X) :- -is_bcg(X).
-not_vaccine(flu, X) :- -is_flu_shot(X).
-not_vaccine(rubella, X):- -is_rubella(X).
-not_vaccine(polio, X):- -is_polio(X).
-not_vaccine(meningitis, X):- -is_meningitis(X). 
-not_vaccine(measles, X):- -is_measles(X).
-not_vaccine(hepatitis_b, X):- -is_heptatitis_b(X).
-not_vaccine(tetanus, X):- -is_tetanus(X).
+not_vaccine(bcg, X) :- not is_bcg(X).
+not_vaccine(flu, X) :- not is_flu_shot(X).
+not_vaccine(rubella, X):- not is_rubella(X).
+not_vaccine(polio, X):- not is_polio(X).
+not_vaccine(meningitis, X):- not is_meningitis(X). 
+not_vaccine(measles, X):- not is_measles(X).
+not_vaccine(hepatitis_b, X):- not is_heptatitis_b(X).
+not_vaccine(tetanus, X):- not is_tetanus(X).
 
 missing_vaccines(X, Vaccines) :-findall(V, not_vaccine(V, X), Vaccines).
-
-
-%member(X, [X|T]).
-%member(Y , [X|T]) :- member(Y, T).
-
-%if not vaccinated then make a list of what vaccinations needed
-%%appendVacc([], Y, Y).
-%appendVacc([H|T], Y, [H|Z]   ) :- appendVacc(T,Y,Z).
