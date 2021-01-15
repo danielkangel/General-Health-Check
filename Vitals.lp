@@ -6,14 +6,8 @@
 % Resting pulse rate normal range: 60-100 beats/min
 
 % Facts for a healthy individual
-<<<<<<< HEAD
 bodytemp(37.3).
 bloodpressure(130).
-=======
-bodytemp(37.0).
-systolic(100).
-diastolic(70).
->>>>>>> c75f52a975b4e123d665551f9b9533fc2d0b6d64
 breathingrate(13).
 pulserate(75).
 
@@ -23,7 +17,7 @@ is_normal_blood(X) :- systolic(Sys), diastolic(Dia), Sys =< 120, Dia =<80.
 is_normal_breath(X) :- breathingrate(Breath), Breath >= 12, Breath =< 16.
 is_normal_pulse(X) :-  pulserate(Pulse), Pulse >= 60, Pulse =< 100.
 
--is_normal_blood(X) :- not is_normal_blood(Pressure);
+-is_normal_blood(X) :- not is_normal_blood(Pressure).
 
 % Systolic ranges
 is_systolic_elevated(X) :- -is_normal_blood(Pressure), systolic(Sys), Sys>120, Sys<130.
@@ -37,15 +31,9 @@ is_diastolic_high2(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=90, Di
 is_diastolic_crisis(X) :- -is_normal_blood(Pressure), diastolic(Dia), Dia>=120.
 
 % categories for abnormal blood pressures
-<<<<<<< HEAD
 is_elevated_blood(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 120, Pressure =< 129.
 is_high_blood_stg1(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure >= 130, Pressure =< 139.
 is_high_blood_stg2(X) :- not is_normal_blood(Pressure), bloodpressure(Pressure), Pressure >= 140, Pressure =< 180.
-=======
-is_elevated_blood(X) :- -is_normal_blood(Pressure), systolic(Sys), diastolic(Dia), Sys > 120, Sys =< 129, Dia > 80, Dia<=89.
-is_high_blood_stg1(X) :- -is_normal_blood(Pressure), systolic(Sys), diastolic(Dia), Sys > 130, Sys =< 139.
-is_high_blood_stg2(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 140, Pressure =< 180.
->>>>>>> c75f52a975b4e123d665551f9b9533fc2d0b6d64
 % Call doctor immmediately. Emergency room
 is_high_blood_crisis(X) :- -is_normal_blood(Pressure), bloodpressure(Pressure), Pressure > 180.
 

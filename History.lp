@@ -19,8 +19,12 @@ lung_cancer(high_risk):-tobacco(yes,Packs_Day ,Years), Years >= 1.
 %marijuana.
 caffeine()
 %alchol_consumption(YorN, Frequency).
+
 excercise(Minutes_Per_Week).
+
+
 %Sexually Active
+%Did not want into it for now
 
 
 %FamilyHistory
