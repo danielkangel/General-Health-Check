@@ -1,3 +1,5 @@
+## Languages: Prolog, S(Casp), HTML, CSS, Bootstrap
+
 ## Inspiration
 One of our team members recently had to do a general health check-up for a common illness that took an excessive amount of time. He felt that having an automated reasoning system would help quickly assess the level of risk for patients for certain illnesses and increase efficiency for doctors and nurses. Our team recognized a need for a non-traditional machine learning approach to the problem and the ideas bounced back and forth between us on ways to make it a reality. As continued with the idea, we were able to build multiple functions that could build off each other.
 ## What it does
